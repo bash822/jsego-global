@@ -8,7 +8,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #0b0f0b;
+      background: #0b0b0f;
       font-family: 'Segoe UI', Arial, sans-serif;
       display: flex;
       justify-content: center;
@@ -16,8 +16,8 @@
       min-height: 100vh;
     }
     .box {
-      background: #111711;
-      border: 1px solid #1e2e1e;
+      background: #111117;
+      border: 1px solid #1e1e2e;
       border-radius: 16px;
       padding: 40px;
       width: 100%;
@@ -32,17 +32,17 @@
       margin-bottom: 8px;
     }
     h1 {
-      color: #e8ede8;
+      color: #e8e8ed;
       font-size: 22px;
       margin-bottom: 4px;
     }
     p {
-      color: #687068;
+      color: #686970;
       font-size: 13px;
       margin-bottom: 28px;
     }
     label {
-      color: #687068;
+      color: #686970;
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -51,8 +51,8 @@
     }
     input {
       width: 100%;
-      background: #0d120d;
-      border: 1px solid #1e2e1e;
+      background: #0d0d12;
+      border: 1px solid #1e1f2e;
       border-radius: 8px;
       padding: 12px 16px;
       color: #e8ede8;
@@ -63,7 +63,7 @@
     input:focus { border-color: #c9a84c; }
     button {
       width: 100%;
-      background: linear-gradient(135deg, #2a6e2a, #1d521d);
+      background: linear-gradient(135deg, #2b2a6e, #1d1e52);
       color: #fff;
       border: none;
       border-radius: 10px;
@@ -85,14 +85,14 @@
 <body>
   <div class="box">
     <div class="logo">J-Sego Global Limited</div>
-    <h1>🔒 Admin Login</h1>
+    <h1> Admin Login</h1>
     <p>Enter your password to access the dashboard</p>
 
     <label>Password</label>
     <input type="password" id="pass" placeholder="Enter password" onkeydown="if(event.key==='Enter') login()"/>
 
     <button onclick="login()">Sign In →</button>
-    <div class="error" id="err">❌ Wrong password. Try again.</div>
+    <div class="error" id="err"> Wrong password. Try again.</div>
   </div>
 
   <script>
