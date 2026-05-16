@@ -357,6 +357,4 @@ document.addEventListener('keydown', e => {
 cartLoad();
 updateBadge();
 
-if (sessionStorage.getItem('jsego-admin') !== 'true') {
-    window.location.href = 'admin-login.html';
-  }
+ 
