@@ -3,7 +3,7 @@
    Original site JS + Cart with real backend
 ───────────────────────────────────────────── */
 
-const API = 'http://localhost:3000/api';   // ← change to your live URL when deployed
+const API = 'https://jsego-global.onrender.com/api';   // ← change to your live URL when deployed
 
 /* ══ SITE FUNCTIONS ══════════════════════════ */
 
