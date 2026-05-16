@@ -2,7 +2,7 @@
 
 'use strict';
 
-const API       = 'http://localhost:3000/api';  // ← update when deployed live
+const API = 'https://jsegogloballtd.com/api';  // ← update when deployed live
 const PRICE_PER = 400;
 
 let currentFilter = 'all';
