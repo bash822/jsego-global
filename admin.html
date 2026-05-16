@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <title>J-Sego Admin — Orders Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="admin.css"/>
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-logo">
+      <div class="brand-icon">JS</div>
+      <div class="brand-name">
+        J-Sego Global
+        <small>Admin Panel</small>
+      </div>
+    </div>
+    <div class="brand-badge">
+      <div class="live-dot"></div> Live Dashboard
+    </div>
+    <button class="sidebar-close-btn" onclick="closeSidebar()" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-sec-label">Main</div>
+    <button class="nav-btn active" onclick="setView('orders',this)">
+      <span class="ni"></span> Orders
+      <span class="nbadge" id="pend-badge">0</span>
+    </button>
+    <button class="nav-btn" onclick="setView('product',this)">
+      <span class="ni"></span> Product Info
+    </button>
+
+    <div class="nav-sec-label">Tools</div>
+    <button class="nav-btn" onclick="exportCSV()">
+      <span class="ni">⬇</span> Export CSV
+    </button>
+    <button class="nav-btn" onclick="window.print()">
+      <span class="ni"></span> Print Orders
+    </button>
+    <button class="nav-btn danger" onclick="clearOrders()">
+      <span class="ni"></span> Clear All Orders
+    </button>
+
+    <div class="nav-sec-label">Store</div>
+    <a class="nav-btn" href="index.html" target="_blank">
+      <span class="ni"></span> Visit Store
+    </a>
+
+  </nav>
+
+  <div class="sidebar-footer">
+    Syncs with store via browser storage.<br>
+    <a href="index.html">jsegoglobal.com</a> · Admin v1.0
+  </div>
+
+</aside>
+
+ 
+<main class="main">
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="hamburger-btn" id="hamburgerBtn" onclick="openSidebar()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div>
+        <div class="topbar-title" id="vw-title">Orders Dashboard</div>
+        <div class="topbar-sub">OG's Garri Soaking Mix 4-in-1 · ₦400/pack</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-clock" id="clock"></span>
+      <button class="btn-refresh" id="rfbtn" onclick="refresh()">
+        <span class="ri">↻</span>
+        <span class="refresh-label">Refresh</span>
+      </button>
+    </div>
+  </header>
+
+ 
+  <div class="content" id="view-orders">
+    <div class="stats-row" id="stats-row"></div>
+
+    
+    <div class="product-strip">
+      <div class="ps-icon">🌾</div>
+      <div class="ps-info">
+        <div class="ps-name">OG's Garri Soaking Mix 4-in-1</div>
+        <div class="ps-sub">Only product on sale · No preservatives · Ready in 2 min · Nationwide Delivery</div>
+      </div>
+      <div class="ps-price-wrap">
+        <div class="ps-price">₦400</div>
+        <div class="ps-price-sub">/ pack</div>
+      </div>
+    </div>
+
+    <!-- Orders panel -->
+    <div class="panel">
+      <div class="panel-hd">
+        <div class="panel-title">
+           All Orders
+          <span class="panel-cnt" id="ord-cnt">0</span>
+        </div>
+        <div class="panel-ctrls">
+          <!-- Filter pills scroll horizontally on mobile -->
+          <div class="fp-scroll">
+            <div class="fp-wrap">
+              <button class="fp active" onclick="setFilter('all',this)">All</button>
+              <button class="fp" onclick="setFilter('Pending',this)">Pending</button>
+              <button class="fp" onclick="setFilter('Processing',this)">Processing</button>
+              <button class="fp" onclick="setFilter('Shipped',this)">Shipped</button>
+              <button class="fp" onclick="setFilter('Delivered',this)">Delivered</button>
+              <button class="fp" onclick="setFilter('Cancelled',this)">Cancelled</button>
+            </div>
+          </div>
+          <div class="srch">
+            <span class="srch-icon"></span>
+            <input type="text" id="srch-in" placeholder="Name, ID, phone…" oninput="renderTable()"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop table -->
+      <div class="tbl-wrap" id="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Packs</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Address</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+     
+      <div class="mobile-cards" id="mobile-cards"></div>
+
+       
+      <div class="empty-st" id="empt">
+        <div class="ei">📭</div>
+        <h3>No orders yet</h3>
+        <p>Orders from your store will appear here automatically.</p>
+      </div>
+
+    </div> 
+
+    </div> 
+
+   
+  <div class="content" id="view-product" style="display:none;">
+    <div class="panel">
+      <div class="panel-hd">
+        <div class="panel-title">🌾 Product Details</div>
+      </div>
+      <div class="prod-view-body">
+
+        <div class="product-strip prod-strip-lg">
+          <div class="ps-icon ps-icon-lg">🌾</div>
+          <div class="ps-info">
+            <div class="ps-name ps-name-lg">OG's Garri Soaking Mix 4-in-1</div>
+            <div class="ps-sub">by J-Sego Global Limited · SKU: OGS-GARRI-001</div>
+          </div>
+          <div class="ps-price-wrap">
+            <div class="ps-price ps-price-lg">₦400</div>
+            <div class="ps-price-sub">per pack</div>
+          </div>
+        </div>
+
+        <div class="prod-stats-grid">
+          <div class="prod-stat-card">
+            <div class="psc-label">Packs Sold</div>
+            <div class="psc-value" id="pp-sold">0</div>
+          </div>
+          <div class="prod-stat-card gold">
+            <div class="psc-label">Total Revenue</div>
+            <div class="psc-value" id="pp-rev">₦0</div>
+          </div>
+          <div class="prod-stat-card">
+            <div class="psc-label">Avg Order Size</div>
+            <div class="psc-value" id="pp-avg">0 packs</div>
+          </div>
+        </div>
+
+        <div class="prod-features">
+          <div class="pf-title">Product Features</div>
+          <div class="pf-row"><div class="pf-chk">✓</div><span><strong>4-in-1 Premium Blend</strong> — Four perfectly balanced ingredients in every pack</span></div>
+          <div class="pf-row"><div class="pf-chk">✓</div><span><strong>No Preservatives Added</strong> — 100% natural ingredients, safe for the whole family</span></div>
+          <div class="pf-row"><div class="pf-chk">✓</div><span><strong>Ready in Under 2 Minutes</strong> — Ultimate convenience for busy lifestyles</span></div>
+          <div class="pf-row"><div class="pf-chk">✓</div><span><strong>Nationwide Delivery Available</strong> — Order online, delivered to your doorstep</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div> 
+
+</main> 
+
+ 
+<nav class="bottom-nav" id="bottomNav">
+  <button class="bn-btn active" onclick="setView('orders',this); setBottomNav(this)">
+    <span class="bn-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M160-160v-516L82-846l72-34 94 202h464l94-202 72 34-78 170v516H160Zm240-280h160q17 0 28.5-11.5T600-480q0-17-11.5-28.5T560-520H400q-17 0-28.5 11.5T360-480q0 17 11.5 28.5T400-440ZM240-240h480v-358H240v358Zm0 0v-358 358Z"/></svg></span>
+    <span class="bn-label">Orders</span>
+  </button>
+  <button class="bn-btn" onclick="setView('product',this); setBottomNav(this)">
+    <span class="bn-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/></svg></span>
+    <span class="bn-label">Product</span>
+  </button>
+  <button class="bn-btn" onclick="exportCSV()">
+    <span class="bn-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m648-140 112-112v92h40v-160H640v40h92L620-168l28 28Zm-448 20q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v268q-19-9-39-15.5t-41-9.5v-243H200v560h242q3 22 9.5 42t15.5 38H200Zm0-120v40-560 243-3 280Zm80-40h163q3-21 9.5-41t14.5-39H280v80Zm0-160h244q32-30 71.5-50t84.5-27v-3H280v80Zm0-160h400v-80H280v80ZM720-40q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40Z"/></svg></span>
+    <span class="bn-label">Export</span>
+  </button>
+  <button class="bn-btn" onclick="openSidebar()">
+    <span class="bn-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></span>
+    <span class="bn-label">Menu</span>
+  </button>
+</nav>
+
+<div class="modal-overlay" id="mod" onclick="modClick(event)">
+  <div class="modal-panel" id="mod-panel"></div>
+</div>
+<div id="atst"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+[
+  {
+    "id": "ORD-0001",
+    "date": "15/05/2026, 17:45:06",
+    "customer": {
+      "name": "Mustapha Eneji",
+      "phone": "09087675654",
+      "email": "enejimustapha3@gmail.com",
+      "address": "4, bola ijegun"
+    },
+    "items": [
+      {
+        "name": "OG's Garri Mix",
+        "qty": 3,
+        "price": 400
+      }
+    ],
+    "coupon": null,
+    "discount": 0,
+    "delivery": 0,
+    "total": 1200,
+    "note": "runnn",
+    "status": "Delivered"
+  }
+]

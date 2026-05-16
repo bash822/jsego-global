@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GARRI-MIX PRODUCTION</title>
+    <link rel="stylesheet" href="style.css" >
+    <script src="https://kit.fontawesome.com/316e4f1d06.js" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+    <!-- PRELOADER -->
+<div id="preloader">
+  <div class="pre-logo">J-Sego <span>Global</span></div>
+  <div class="pre-bar"><div class="pre-bar-fill"></div></div>
+</div>
+ 
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">JS</div>
+    <div class="nav-logo-text">J-Sego Global<small>Limited</small></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#product">OG's 4-in-1</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#product" class="nav-cta">Order Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <button class="cart-icon-btn" onclick="openCartDrawer()">
+  <i class="fa-solid fa-shopping-cart" style="color: rgb(255, 255, 255);"></i> <span class="cart-badge">0</span>
+</button>
+</nav>
+ 
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#product" class="mobile-link">OG's 4-in-1</a>
+  <a href="#reviews" class="mobile-link">Reviews</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="#product" class="mobile-link" style="color: var(--blue-accent);">Order Now →</a>
+</div>
+ 
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow"></div>
+ 
+  <div class="hero-content">
+    <div class="hero-badge">🇳🇬 Proudly Nigerian · Premium Quality</div>
+    <h1 class="hero-title">
+      Taste the<br>
+      <span class="accent">Future</span> of<br>
+      <span class="gold">Nigerian</span> Food
+    </h1>
+    <p class="hero-desc">
+      J-Sego Global Limited delivers premium food products, real estate solutions, and event services — rooted in Nigeria, built for the world.
+    </p>
+    <div class="hero-actions">
+      <a href="#product" class="btn-primary"><i class="fa-solid fa-shopping-cart" style="color: rgb(255, 255, 255);"></i> Order OG's 4-in-1</a>
+      <a href="#about" class="btn-outline">Explore More →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">500<span>+</span></div>
+        <div class="hero-stat-label">Happy Customers</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">4<span>★</span></div>
+        <div class="hero-stat-label">Product Rating</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3<span>+</span></div>
+        <div class="hero-stat-label">Industries</div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="hero-visual">
+    <div class="hero-img-wrap">
+      <img src="images/OGSgarri-img.avif" alt="Premium Food" class="hero-img-main"/>
+      <div class="hero-img-badge">
+        <div class="hero-img-badge-icon"><i class="fa-brands fa-shopify" style="color: rgb(19, 8, 117);"></i></div>
+        <div class="hero-img-badge-text">
+
+            <button class="btn-add-cart" 
+  onclick="addToCart('product-1', 'OG\'s Garri Mix', 400, 'images/OGSgarri-img.avif')">
+  Add to Cart
+</button>
+
+          <strong>OG's Garri Mix</strong>
+          <span>4-in-1 Blend · Now Available</span>
+        </div>
+      </div>
+      <div class="hero-img-tag">⚡ New Launch</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- MARQUEE -->
+<div class="marquee-band">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item"><i class="fa-brands fa-shopify" style="color: rgb(255, 255, 255);"></i> Premium Food Supply <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item"><i class="fa-solid fa-home" style="color: rgb(255, 255, 255);"></i> Real Estate Solutions <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item"><i class="fa-solid fa-calendar-alt" style="color: rgb(255, 255, 255);"></i> Event Management <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item"><i class="fa-solid fa-shopping-cart" style="color: rgb(255, 255, 255);"></i> OG's Garri Soaking Mix 4-in-1 <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item"><i class="fa-solid fa-flag" style="color: rgb(255, 255, 255);"></i> Proudly Nigerian <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item"><i class="fa-solid fa-truck" style="color: rgb(255, 255, 255);"></i> Fast Nationwide Delivery <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">⭐ Quality You Can Trust <span class="marquee-dot">✦</span></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="marquee-item"><i class="fa-brands fa-shopify" style="color: rgb(255, 255, 255);"></i> Premium Food Supply <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item"><i class="fa-solid fa-home" style="color: rgb(255, 255, 255);"></i> Real Estate Solutions <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item"><i class="fa-solid fa-calendar-alt" style="color: rgb(255, 255, 255);"></i> Event Management <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item"><i class="fa-solid fa-shopping-cart" style="color: rgb(255, 255, 255);"></i> OG's Garri Soaking Mix 4-in-1 <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item"><i class="fa-solid fa-flag" style="color: rgb(255, 255, 255);"></i> Proudly Nigerian <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item"><i class="fa-solid fa-truck" style="color: rgb(255, 255, 255);"></i> Fast Nationwide Delivery <span class="marquee-dot">✦</span></div>
+    <div class="marquee-item">⭐ Quality You Can Trust <span class="marquee-dot">✦</span></div>
+  </div>
+</div>
+ 
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label reveal">What We Do</div>
+      <h2 class="section-title reveal">Our Core <span class="italic">Services</span></h2>
+    </div>
+    <a href="#contact" class="btn-primary reveal">Get In Touch →</a>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal" style="transition-delay:0.1s">
+      <div class="service-icon"><i class="fa-brands fa-shopify" style="color: rgb(255, 255, 255);"></i></div>
+      <h3>Food & Beverage Supply</h3>
+      <p>Premium quality food products sourced and delivered fresh across Nigeria with guaranteed consistency.</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.2s">
+      <div class="service-icon"><i class="fa-solid fa-home" style="color: rgb(255, 255, 255);"></i></div>
+      <h3>Real Estate</h3>
+      <p>Connecting buyers and investors with premium properties and real estate opportunities nationwide.</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.3s">
+      <div class="service-icon"><i class="fa-solid fa-calendar-alt" style="color: rgb(255, 255, 255);"></i></div>
+      <h3>Event Management</h3>
+      <p>Full-service event planning and execution — from corporate gatherings to grand celebrations.</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.4s">
+      <div class="service-icon"><i class="fa-solid fa-shopping-cart" style="color: rgb(255, 255, 255);"></i></div>
+      <h3>E-Commerce Supply</h3>
+      <p>Seamless online ordering and bulk supply solutions for businesses and households alike.</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.1s">
+      <div class="service-icon"><i class="fa-solid fa-truck" style="color: rgb(255, 255, 255);"></i></div>
+      <h3>Nationwide Delivery</h3>
+      <p>Reliable logistics network ensuring your orders arrive safely and on time, anywhere in Nigeria.</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.2s">
+      <div class="service-icon"><i class="fa-solid fa-handshake" style="color: rgb(255, 255, 255);"></i></div>
+      <h3>Business Partnerships</h3>
+      <p>Strategic alliances with retailers, distributors, and corporate clients for mutual growth.</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.3s">
+      <div class="service-icon"><i class="fa-solid fa-leaf" style="color: rgb(255, 255, 255);"></i></div>
+      <h3>Agricultural Sourcing</h3>
+      <p>Direct farm-to-market sourcing ensuring freshness and supporting local Nigerian farmers.</p>
+    </div>
+    <div class="service-card reveal" style="transition-delay:0.4s">
+      <div class="service-icon">💬</div>
+      <h3>Customer Support</h3>
+      <p>Dedicated support team available to assist with orders, enquiries, and after-sales care.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- PRODUCT SPOTLIGHT -->
+<section class="product-section" id="product">
+  <div class="product-inner">
+    <div class="product-imgs reveal-left">
+      <img src="images/OGSgarri-img3.avif" alt="OG's Garri Mix" class="product-img-main"/>
+      <img src="images/OGSgarri-img3.avif" alt="Product Detail" class="product-img-float"/>
+    </div>
+    <div class="product-content reveal-right">
+      <div class="section-label">Star Product</div>
+      <h2 class="section-title">OG's Garri Soaking<br><span class="italic">Mix 4-in-1</span></h2>
+      <p class="section-sub">Nigeria's most exciting new food innovation — a perfect 4-blend mix that transforms how you enjoy Garri. Convenient, delicious, and unlike anything you've tasted before.</p>
+      <div class="product-features">
+        <div class="product-feature">
+          <div class="feature-check">✓</div>
+          <div class="feature-text">
+            <strong>4-in-1 Premium Blend</strong>
+            <span>Four perfectly balanced ingredients in every pack</span>
+          </div>
+        </div>
+        <div class="product-feature">
+          <div class="feature-check">✓</div>
+          <div class="feature-text">
+            <strong>No Preservatives Added</strong>
+            <span>100% natural ingredients, safe for the whole family</span>
+          </div>
+        </div>
+        <div class="product-feature">
+          <div class="feature-check">✓</div>
+          <div class="feature-text">
+            <strong>Ready in Under 2 Minutes</strong>
+            <span>Ultimate convenience for your busy lifestyle</span>
+          </div>
+        </div>
+        <div class="product-feature">
+          <div class="feature-check">✓</div>
+          <div class="feature-text">
+            <strong>Nationwide Delivery Available</strong>
+            <span>Order online, delivered to your doorstep</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-price-tag">
+        <span class="price-label">Starting from</span>
+        <span class="price-amount">₦400</span>
+        <span class="price-sub">/ pack</span>
+      </div>
+      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+        <!-- <a href="#product" class="btn-primary"><i class="fa-solid fa-shopping-cart" style="color: rgb(255, 255, 255);"></i> Order Now</a> -->
+        
+            <button class="btn-add-cart" 
+  onclick="addToCart('product-1', 'OG\'s Garri Mix', 400, 'images/OGSgarri-img3.avif')">
+  Add to Cart
+</button>
+
+         <button class="cart2-icon-btn" onclick="openCartDrawer()">
+  <i class="fa-solid fa-shopping-cart" style="color: rgb(255, 255, 255);"></i> <span class="cart-badge">0</span>
+</button>
+        <!-- <a href="#contact" class="btn-outline" style="color:var(--green); border-color:var(--border);">Learn More →</a> -->
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="reviews">
+  <div class="testimonials-header">
+    <div class="section-label reveal">Customer Reviews</div>
+    <h2 class="section-title reveal">What People Are <span class="italic">Saying</span></h2>
+    <p class="section-sub reveal">Real feedback from our growing community of satisfied customers across Nigeria.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal" style="transition-delay:0.1s">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"The OG's Garri Mix is absolutely amazing! It's so convenient and the taste is unlike anything I've had. I've already ordered 3 packs for my family."</p>
+      <div class="t-author">
+        <div class="t-avatar">AF</div>
+        <div><div class="t-name">Adaeze F.</div><div class="t-role">Lagos, Nigeria</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card featured reveal" style="transition-delay:0.2s">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"J-Sego Global truly delivers on quality. excellent packaging, and the product exceeded my expectations. This is a game-changer for Nigerian food!"</p>
+      <div class="t-author">
+        <div class="t-avatar" style="background:rgba(255,255,255,0.2);color:white;">KO</div>
+        <div><div class="t-name">Kemi Okonkwo</div><div class="t-role">Abuja, Nigeria</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal" style="transition-delay:0.3s">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"I ordered for my small chops business and the quality of supply was top-notch. Very professional company. I'll definitely keep ordering!"</p>
+      <div class="t-author">
+        <div class="t-avatar">EB</div>
+        <div><div class="t-name">Emeka B.</div><div class="t-role">lagos, Nigeria</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div class="about-imgs reveal-left">
+      <div>
+        <img src="images/OGSgarri-img.avif" alt="Fresh Food" class="about-img tall"/>
+        <img src="images/OGSgarri-img.avif" alt="Products" class="about-img short bottom"/>
+      </div>
+      <div style="margin-top: 32px;">
+        <img src="images/OGSgarri-img.avif" alt="Business" class="about-img short"/>
+        <img src="images/OGSgarri-img.avif" alt="Team" class="about-img tall bottom"/>
+      </div>
+    </div>
+    <div class="about-content reveal-right">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title">Quality, Innovation &<br><span class="italic">Nigerian Pride</span></h2>
+      <p class="section-sub">J-Sego Global Limited is a multi-industry Nigerian company committed to delivering the highest quality products and services. From food supply to real estate and event management, we are a trusted partner for households and businesses across Nigeria.</p>
+      <div class="about-pills">
+        <span class="pill active">Food Supply</span>
+        <span class="pill">Real Estate</span>
+        <span class="pill">Event Management</span>
+        <span class="pill">E-Commerce</span>
+      </div>
+      <p style="color:var(--muted); font-size:0.9rem; line-height:1.75; margin-bottom:32px;">Our flagship product — OG's Garri Soaking Mix 4-in-1 — is just the beginning. We are committed to bringing innovative Nigerian food solutions to the global market while staying true to our roots and values.</p>
+      <a href="#contact" class="btn-primary">Reach Out To Us →</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- CTA BANNER -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="cta-content reveal-left">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Ready to Experience <span class="italic" style="color:var(--gold);">the Difference?</span></h2>
+      <p class="section-sub">Subscribe for exclusive deals, or send us an enquiry. Our team is always ready to help.</p>
+      <div class="cta-form">
+        <input type="email" class="cta-input" placeholder="Your email address"/>
+        <button class="btn-primary" onclick="handleSubscribe(this)">Subscribe ✓</button>
+      </div>
+      <div style="margin-top:40px; display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.7); font-size:0.9rem;">
+          <span style="color:var(--blue-accent);">📧</span> info@jsegoglobal.com
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.7); font-size:0.9rem;">
+          <span style="color:var(--blue-accent);"><i class="fa-solid fa-phone" style="color: rgb(255, 255, 255);"></i></span> +234-9166646350
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.7); font-size:0.9rem;">
+          <span style="color:var(--blue-accent);"><i class="fa-solid fa-flag" style="color: rgb(255, 255, 255);"></i></span> Nigeria (Nationwide Delivery)
+        </div>
+      </div>
+    </div>
+    <img src="images/OGSgarri-img.avif" alt="Delicious Food" class="cta-img reveal-right"/>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="text-decoration:none; display:flex; align-items:center; gap:10px; margin-bottom:0;">
+        <div class="nav-logo-icon">JS</div>
+        <div class="nav-logo-text">J-Sego Global<small style="color:rgba(255,255,255,0.4);">Limited</small></div>
+      </div>
+      <p>Quality products and services, proudly Nigerian. Delivering excellence in food supply, real estate, and event management.</p>
+      <div class="footer-socials">
+        <a href="https://wa.link/qyzlbp" class="social-btn"><i class="fa-brands fa-whatsapp" style="color: rgb(99, 230, 190); font-size: 2rem;"></i></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin" style="color: rgb(252, 252, 255); font-size: 2rem;"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-youtube" style="color: rgb(235, 61, 38); font-size: 2rem;"></i></a>
+        <a href="mailto:info@jsegoglobal.com" class="social-btn"><i class="fa-regular fa-envelope" style="color: rgb(255, 255, 255); font-size: 2rem;"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#product">OG's 4-in-1</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Food Supply</a></li>
+        <li><a href="#">Real Estate</a></li>
+        <li><a href="#">Event Management</a></li>
+        <li><a href="#">E-Commerce</a></li>
+        <li><a href="#">Bulk Orders</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@jsegoglobal.com">info@jsegoglobal.com</a></li>
+        <li><a href="tel:+2349166646350">+234-9166646350</a></li>
+        <li><a href="#">Nigeria (Nationwide)</a></li>
+      </ul>
+      <!-- <h4 style="margin-top:24px;">Admin</h4>
+      <ul>
+        <li><a href="admin.html" style="color:var(--green-accent);">Admin Dashboard →</a></li>
+      </ul> -->
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 J-Sego Global Limited. All rights reserved.</p>
+    <p style="font-size:0.8rem; color:rgba(255,255,255,0.3);">Proudly Nigerian 🇳🇬</p>
+  </div>
+</footer>
+ 
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+
+ 
+<!-- Overlay (darkens page behind drawer) -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+  <!-- Header -->
+  <div class="cart-drawer-header">
+    <div class="cart-drawer-title">
+      <span class="cart-drawer-icon">🛒</span>
+      Your Cart
+      <span class="cart-drawer-count" id="drawerCount">0</span>
+    </div>
+    <button class="cart-drawer-close" onclick="closeCartDrawer()">✕</button>
+  </div>
+
+  <!-- Items -->
+  <div class="cart-drawer-body" id="cartDrawerBody">
+    <!-- Empty state -->
+    <div class="cart-empty-state" id="cartEmptyState">
+      <div class="cart-empty-icon">🛒</div>
+      <h3>Your cart is empty</h3>
+      <p>Add OG's Garri Mix or any product to get started!</p>
+      <button class="cart-empty-cta" onclick="closeCartDrawer()">Browse Products →</button>
+    </div>
+    <!-- Items list -->
+    <div id="cartItemsList"></div>
+  </div>
+
+  <!-- Coupon -->
+  <div class="cart-coupon-row" id="cartCouponRow" style="display:none;">
+    <input type="text" class="cart-coupon-input" id="cartCouponInput" placeholder="Coupon code (try JSEGO10)"/>
+    <button class="cart-coupon-btn" onclick="applyCoupon()">Apply</button>
+  </div>
+  <div class="cart-coupon-msg" id="cartCouponMsg"></div>
+
+  <!-- Footer -->
+  <div class="cart-drawer-footer" id="cartDrawerFooter" style="display:none;">
+    <div class="cart-summary-rows">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span id="drawerSubtotal">₦0</span>
+      </div>
+      <div class="cart-summary-row" id="drawerDiscountRow" style="display:none;">
+        <span>Discount</span>
+        <span id="drawerDiscount" style="color:#2ecc71;"></span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Delivery</span>
+        <span id="drawerDelivery">₦400</span>
+      </div>
+      <div class="cart-summary-divider"></div>
+      <div class="cart-summary-row cart-summary-total">
+        <span>Total</span>
+        <span id="drawerTotal">₦0</span>
+      </div>
+    </div>
+    <div class="cart-free-delivery-note" id="cartFreeNote">
+      🚚 Free delivery on orders above <strong>₦400</strong>
+    </div>
+    <button class="cart-checkout-btn" onclick="openCheckoutModal()">
+      Proceed to Checkout →
+    </button>
+    <button class="cart-continue-btn" onclick="closeCartDrawer()">Continue Shopping</button>
+  </div>
+
+</div>
+
+ 
+<div class="checkout-modal-overlay" id="checkoutModalOverlay" onclick="closeCheckoutOverlay(event)">
+  <div class="checkout-modal-panel" id="checkoutModalPanel">
+
+     
+    <div id="checkoutStepDetails">
+      <div class="checkout-modal-header">
+        <h2>Delivery Details</h2>
+        <button class="checkout-modal-close" onclick="closeCheckoutModal()">✕</button>
+      </div>
+      <p class="checkout-modal-sub">Where should we deliver your order?</p>
+      <div class="checkout-form-grid">
+        <div class="checkout-form-group">
+          <label>Full Name *</label>
+          <input type="text" id="cdName" placeholder="e.g. Amara Okafor"/>
+        </div>
+        <div class="checkout-form-group">
+          <label>Phone Number *</label>
+          <input type="tel" id="cdPhone" placeholder="+234 803 000 0000"/>
+        </div>
+        <div class="checkout-form-group full">
+          <label>Email Address</label>
+          <input type="email" id="cdEmail" placeholder="you@example.com"/>
+        </div>
+        <div class="checkout-form-group full">
+          <label>Delivery Address *</label>
+          <textarea id="cdAddress" rows="2" placeholder="Street, City, State"></textarea>
+        </div>
+        <div class="checkout-form-group full">
+          <label>Order Note <span style="opacity:.5">(optional)</span></label>
+          <textarea id="cdNote" rows="2" placeholder="Special instructions?"></textarea>
+        </div>
+      </div>
+      <div class="checkout-modal-actions">
+        <button class="checkout-btn-back" onclick="closeCheckoutModal()">← Back to Cart</button>
+        <button class="checkout-btn-next" onclick="goToConfirm()">Review Order →</button>
+      </div>
+    </div>
+
+    
+    <div id="checkoutStepConfirm" style="display:none;">
+      <div class="checkout-modal-header">
+        <h2>Confirm Order</h2>
+        <button class="checkout-modal-close" onclick="closeCheckoutModal()">✕</button>
+      </div>
+      <p class="checkout-modal-sub">Review everything before placing your order.</p>
+      <div id="confirmCustomerBlock"></div>
+      <div id="confirmItemsBlock"></div>
+      <div class="confirm-total-row">
+        <span>Order Total</span>
+        <span id="confirmGrandTotal" class="confirm-total-amount"></span>
+      </div>
+      <div class="checkout-payment-note">
+        💳 Payment on delivery — our team will call to confirm.
+      </div>
+      <div class="checkout-modal-actions">
+        <button class="checkout-btn-back" onclick="backToDetails()">← Edit Details</button>
+        <button class="checkout-btn-place" onclick="placeOrder()">🛒 Place Order</button>
+      </div>
+    </div>
+
+     
+    <div id="checkoutStepSuccess" style="display:none;text-align:center;">
+      <div class="checkout-success-icon">🎉</div>
+      <h2 style="font-family:'Playfair Display',serif;color:#c9a84c;margin-bottom:8px;">Order Placed!</h2>
+      <p style="color:#686970;margin-bottom:20px;">We'll contact you shortly to confirm delivery.</p>
+      <div class="checkout-success-ref">
+        Order ID: <strong id="successOrderId"></strong>
+      </div>
+      <button class="cart-checkout-btn" style="margin-top:24px;width:100%;" onclick="closeAfterSuccess()">
+        Continue Shopping
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script src="function.js"></script>
+ 
+</body>
+</html>
