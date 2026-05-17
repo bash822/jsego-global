@@ -1,10 +1,4 @@
-/**
- * J-SEGO GLOBAL — Backend Server
- * Node.js + Express · File-based storage · Email notifications
- *
- * Run:  node server.js
- * API:  http://localhost:3000/api
- */
+ 
 
 require('dotenv').config();
 
@@ -18,9 +12,7 @@ const app       = express();
 const PORT      = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'orders.json');
 
-/* ════════════════════════════════════════
-   MIDDLEWARE
-════════════════════════════════════════ */
+/*  MIDDLEWARE*/
 app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
@@ -161,9 +153,7 @@ function buildAdminEmail(order) {
   };
 }
 
-/* ════════════════════════════════════════
-   EMAIL — CUSTOMER CONFIRMATION
-════════════════════════════════════════ */
+/* EMAIL — CUSTOMER CONFIRMATION*/
 function buildCustomerEmail(order) {
   const packs    = order.items.reduce((s, i) => s + i.qty, 0);
   const itemRows = order.items.map(i => `
@@ -234,9 +224,7 @@ function buildCustomerEmail(order) {
   };
 }
 
-/* ════════════════════════════════════════
-   SEND EMAILS
-════════════════════════════════════════ */
+/* SEND EMAILS*/
 async function sendOrderEmails(order) {
   try {
     await transporter.sendMail(buildAdminEmail(order));
@@ -251,9 +239,7 @@ async function sendOrderEmails(order) {
   }
 }
 
-/* ════════════════════════════════════════
-   FILE HELPERS
-════════════════════════════════════════ */
+/*FILE HELPERS*/
 function readOrders() {
   try {
     if (!fs.existsSync(DATA_FILE)) return [];
@@ -267,9 +253,7 @@ function nextOrderId() {
   return 'ORD-' + String(readOrders().length + 1).padStart(4, '0');
 }
 
-/* ════════════════════════════════════════
-   ROUTES
-════════════════════════════════════════ */
+/*ROUTE */
 app.get('/api/orders', (req, res) => {
   res.json({ success: true, orders: readOrders() });
 });
@@ -360,9 +344,7 @@ app.get('/api/stats', (req, res) => {
   res.json({ success: true, stats: { total: orders.length, revenue, pending, delivered, packsSold } });
 });
 
-/* ════════════════════════════════════════
-   START
-════════════════════════════════════════ */
+/*START*/
 app.listen(PORT, () => {
   console.log(`\n🌿 J-Sego Server → http://localhost:${PORT}`);
   console.log(`   Store  → http://localhost:${PORT}/index.html`);

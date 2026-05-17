@@ -1,8 +1,8 @@
  
 
-const API = 'https://jsegogloballtd.com/api';   // ← change to your live URL when deployed
+const API = 'https://jsegogloballtd.com/api';   
 
-/* ══ SITE FUNCTIONS ══════════════════════════ */
+/*SITE FUNCTIONS  */
 
 // Preloader
 window.addEventListener('load', () => {
@@ -55,7 +55,7 @@ document.querySelectorAll('.pill').forEach(pill => {
 });
 
 
-/* ══ CART ════════════════════════════════════ */
+/*CART  */
 
 const CART_KEY    = 'jsego_cart';
 const DELIVERY_FEE = 0;
