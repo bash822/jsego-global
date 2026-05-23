@@ -367,7 +367,7 @@ function loadLocationMap() {
  
   // Embed Google Maps iframe for Asaba, Nigeria location
   const iframe = document.createElement('iframe');
-  iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d6.6833!3d6.2083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1043f35d5d4b3e6d%3A0x0!2sOkpanam%2C+Asaba%2C+Delta+State%2C+Nigeria!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng";
+  iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d6.6833!3d6.2083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1043f35d5d4b3e6d%3A0x0!2s12+Izuka+Amantu+St%2C+Asaba%2C+Delta+State%2C+Nigeria!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng";
   iframe.allowFullscreen = true;
   iframe.loading = "lazy";
   iframe.referrerPolicy = "no-referrer-when-downgrade";
