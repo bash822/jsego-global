@@ -180,7 +180,7 @@ function renderDrawerFooter() {
 
   document.getElementById('drawerSubtotal').textContent = fmtN(cartSubtotal());
   document.getElementById('drawerDelivery').textContent =
-    deliveryAmt() === 0 ? '🎉 Free!' : fmtN(deliveryAmt());
+    deliveryAmt() === 0 ? ' Free!' : fmtN(deliveryAmt());
   document.getElementById('drawerTotal').textContent = fmtN(grandTotal());
 
   const discRow = document.getElementById('drawerDiscountRow');

@@ -60,7 +60,7 @@
     display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1rem; font-weight: 900;
     font-family: 'Playfair Display', serif;
   }
-  .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--white); line-height: 1.1; }
+  .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color:#c9a84c; line-height: 1.1; }
   .nav-logo-text small {  display: block; font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 800; color: var(--muted); letter-spacing: 3px; text-transform: uppercase; }
   .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
   .nav-links a { text-decoration: none; color: var(--white); font-size: 0.9rem; font-weight: 500; transition: color 0.3s; position: relative; }
@@ -837,7 +837,7 @@
   text-align: center;
   margin-bottom: 64px;
 }
-.section-sub{
+.gtku-header p{
   text-align: center;
   align-items: center;
   display: inline-flex;
@@ -864,7 +864,7 @@
 }
  
 .gtku-story p {
-  color:var(--muted, white);
+   color:rgba(255,255,255,0.7);
   font-size: 1rem;
   line-height: 1.85;
   margin-bottom: 16px;
@@ -920,7 +920,7 @@
 }
  
 .gtku-card p {
-  color:var(--muted, white);
+  color:rgba(255,255,255,0.7);
   font-size: 0.9rem;
   line-height: 1.8;
 }
@@ -1020,7 +1020,7 @@
 }
  
 .gtku-ceo-bio {
-  color:var(--muted, white);
+   color:rgba(255,255,255,0.7);
   font-size: 0.9rem;
   line-height: 1.85;
   margin-bottom: 12px;
@@ -1113,6 +1113,9 @@
  color: #c9a84c;
 
 }   
+.location-info p{
+  color: rgba(255,255,255,0.7);
+}
 .section-label {
   font-size: 0.95rem;
   font-weight: 700;
@@ -1165,7 +1168,8 @@
  
 .location-detail-text span,
 .location-detail-text a {
-  color: var(--muted, #ffffff);
+  /* color: var(--muted, #ffffff); */
+  color: rgba(255,255,255,0.7);
   font-size: 0.9rem;
   text-decoration: none;
   transition: color 0.2s;
@@ -1205,7 +1209,7 @@
 .location-map-card {
   position: absolute;
   bottom: -16px;
-  left: 24px;
+  right: 24px;
   background: var(--bg, #0b0b0f);
   border: 1px solid var(--border, #1e1e2e);
   border-radius: 14px;
